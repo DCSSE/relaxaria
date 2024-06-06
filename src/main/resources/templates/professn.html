@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professionals</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/professn.css">
+</head>
+<body>
+<div class="container-fluid p-0">
+  <!-- Header Section -->
+  <header class="bg-primary text-white text-center py-4">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" th:href="@{/mt_care/relaxaria_welcome}">R E L A X A R I A</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/relaxaria_welcome}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/requestherapy}">Therapy sessions</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/blogpost}">Mental Health</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/professionals}">Professionals</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/about}">About</a></li>
+        </ul>
+      </div>
+      <div class="auth-buttons">
+        <a th:href="@{/mt_care/signup}" class="btn btn-outline-light mr-2 btn-signin">Sign in</a>
+        <a th:href="@{/mt_care/registr}" class="btn btn-light btn-register">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-5">
+    <h1 class="mb-4 text-center">Our Medical Specialists</h1>
+
+    <!-- Search Filters -->
+<!--    <div class="row mb-4">-->
+<!--      <div class="col-md-4">-->
+<!--        <input type="text" id="searchTitle" class="form-control" placeholder="Search by Job Title">-->
+<!--      </div>-->
+<!--      <div class="col-md-4">-->
+<!--        <input type="text" id="searchLocation" class="form-control" placeholder="Search by Location">-->
+<!--      </div>-->
+<!--      <div class="col-md-4">-->
+<!--        <input type="text" id="searchExperience" class="form-control" placeholder="Search by Experience">-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <input type="text" id="searchTitle" class="form-control" placeholder="Search by Job Title">
+      </div>
+      <div class="col-md-4">
+        <input type="text" id="searchLocation" class="form-control" placeholder="Search by Location">
+      </div>
+      <div class="col-md-4">
+        <input type="text" id="searchExperience" class="form-control" placeholder="Search by Experience">
+      </div>
+    </div>
+
+    <!-- Specialists Cards -->
+    <div class="row" id="specialists">
+      <!-- Example of a Specialist Card -->
+      <div class="col-md-4 specialist" data-title="Psychiatrist" data-location="New York" data-experience="10">
+        <div class="card">
+          <img class="card-img-top" src="/imgs/psychiatrist_ph1.webp" alt="Specialist Ph1">
+          <div class="card-body">
+            <h5 class="card-title">Yeshmetova Barno Kamalzhanovna</h5>
+            <p class="card-text"><strong>Job Title:</strong> Psychotherapist</p>
+            <p class="card-text"><strong>Location:</strong> Almaty</p>
+            <p class="card-text"><strong>Experience:</strong> 9 years</p>
+            <button class="btn btn-primary btn-block" onclick="toggleExtraInfo(this)">More Info <i class="fas fa-arrow-down"></i></button>
+            <div class="extra-info mt-3">
+              <p class="card-text"><strong>Contact:</strong> yeshmetova_ba@gmail.com</p>
+              <p><strong>Age:</strong> 35</p>
+              <p><strong>Medical Institution:</strong> Spine Rehabilitation Clinic</p>
+              <p>46 Gagarin Avenue</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 specialist" data-title="Psychiatrist" data-location="New York" data-experience="10">
+        <div class="card">
+          <img class="card-img-top" src="/imgs/psychiatr_ph2.webp" alt="Specialist Ph2">
+          <div class="card-body">
+            <h5 class="card-title">Kozyrev Kirill Sergeevich</h5>
+            <p class="card-text"><strong>Job Title:</strong> Psychiatrist</p>
+            <p class="card-text"><strong>Location:</strong> Almaty</p>
+            <p class="card-text"><strong>Experience:</strong> 7 years</p>
+            <button class="btn btn-primary btn-block" onclick="toggleExtraInfo(this)">More Info <i class="fas fa-arrow-down"></i></button>
+            <div class="extra-info mt-3">
+              <p class="card-text"><strong>Contact:</strong> kozyrev_ki@gmail.com</p>
+              <p><strong>Age:</strong> 32</p>
+              <p><strong>Medical Institution:</strong> Gastroclinic Medical Center</p>
+              <p>19 Sholom Aleichem</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 specialist" data-title="Psychiatrist" data-location="New York" data-experience="10">
+        <div class="card">
+          <img class="card-img-top" src="/imgs/psychiatr_ph3.webp" alt="Specialist ph3">
+          <div class="card-body">
+            <h5 class="card-title">Zhunusova Adiya Yerbolovna</h5>
+            <p class="card-text"><strong>Job Title:</strong> Clinical psychologist</p>
+            <p class="card-text"><strong>Location:</strong> Almaty</p>
+            <p class="card-text"><strong>Experience:</strong> 10 years</p>
+            <button class="btn btn-primary btn-block" onclick="toggleExtraInfo(this)">More Info <i class="fas fa-arrow-down"></i></button>
+            <div class="extra-info mt-3">
+              <p class="card-text"><strong>Contact:</strong> zhunusova_ad@gmail.com</p>
+              <p><strong>Age:</strong> 37</p>
+              <p><strong>Medical Institution:</strong> Free Life Medical Center</p>
+              <p>16 Nurly Zhol</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4>Contact us</h4>
+          <p>Email: support_relaxaria@gmail.com</p>
+          <p>Phone: +8 (701) 787-31-71</p>
+          <p>Address: 34/1 Manas Street</p>
+        </div>
+        <div class="col-md-4" style="padding-left: 10px; padding-right: 10px">
+          <h4>Follow us</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-link-cnt"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#" class="text-link-cnt"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+            <li><a href="#" class="text-link-cnt"><i class="fa fa-twitter"></i> X</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4>Quick Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-link-cnt">Home</a></li>
+            <li><a href="#" class="text-link-cnt">About us</a></li>
+            <li><a href="#" class="text-link-cnt">Blog posts</a></li>
+            <li><a href="#" class="text-link-cnt">Professional</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4">Need help? Visit our <a href="/help" class="text-primary">Help Center</a>.</p>
+      <p>&copy; 2024 Relaxaria. All Rights Reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function toggleExtraInfo(button) {
+    const extraInfo = button.nextElementSibling;
+    extraInfo.classList.toggle('show');
+  }
+
+  document.getElementById('searchTitle').addEventListener('keyup', function() {
+    filterSpecialists();
+  });
+
+  document.getElementById('searchLocation').addEventListener('keyup', function() {
+    filterSpecialists();
+  });
+
+  document.getElementById('searchExperience').addEventListener('keyup', function() {
+    filterSpecialists();
+  });
+
+  function filterSpecialists() {
+    const titleFilter = document.getElementById('searchTitle').value.toUpperCase();
+    const locationFilter = document.getElementById('searchLocation').value.toUpperCase();
+    const experienceFilter = document.getElementById('searchExperience').value.toUpperCase();
+    const specialists = document.getElementById('specialists').getElementsByClassName('specialist');
+
+    for (let i = 0; i < specialists.length; i++) {
+      const title = specialists[i].querySelector(".card-text:nth-of-type(1)").innerText.toUpperCase();
+      const location = specialists[i].querySelector(".card-text:nth-of-type(2)").innerText.toUpperCase();
+      const experience = specialists[i].querySelector(".card-text:nth-of-type(3)").innerText.toUpperCase();
+
+      if (title.includes(titleFilter) && location.includes(locationFilter) && experience.includes(experienceFilter)) {
+        specialists[i].style.display = "";
+      } else {
+        specialists[i].style.display = "none";
+      }
+    }
+  }
+
+  // function toggleExtraInfo(button) {
+  //   const extraInfo = button.nextElementSibling;
+  //   extraInfo.classList.toggle('show');
+  // }
+  //
+  // document.getElementById('searchTitle').addEventListener('keyup', function() {
+  //   filterSpecialists();
+  // });
+  //
+  // document.getElementById('searchLocation').addEventListener('keyup', function() {
+  //   filterSpecialists();
+  // });
+  //
+  // document.getElementById('searchExperience').addEventListener('keyup', function() {
+  //   filterSpecialists();
+  // });
+  //
+  // function filterSpecialists() {
+  //   const titleFilter = document.getElementById('searchTitle').value.toUpperCase();
+  //   const locationFilter = document.getElementById('searchLocation').value.toUpperCase();
+  //   const experienceFilter = document.getElementById('searchExperience').value.toUpperCase();
+  //   const specialists = document.getElementById('specialists').getElementsByClassName('specialist');
+  //
+  //   for (let i = 0; i < specialists.length; i++) {
+  //     let title = specialists[i].getAttribute('data-title').toUpperCase();
+  //     let location = specialists[i].getAttribute('data-location').toUpperCase();
+  //     let experience = specialists[i].getAttribute('data-experience').toUpperCase();
+  //     if (title.indexOf(titleFilter) > -1 && location.indexOf(locationFilter) > -1 && experience.indexOf(experienceFilter) > -1) {
+  //       specialists[i].style.display = "";
+  //     } else {
+  //       specialists[i].style.display = "none";
+  //     }
+  //   }
+  // }
+  // function toggleExtraInfo(button) {
+  //   const extraInfo = button.nextElementSibling;
+  //   extraInfo.classList.toggle('show');
+  // }
+  //
+  // document.getElementById('searchTitle').addEventListener('keyup', function() {
+  //   filterSpecialists();
+  // });
+  //
+  // document.getElementById('searchLocation').addEventListener('keyup', function() {
+  //   filterSpecialists();
+  // });
+  //
+  // document.getElementById('searchExperience').addEventListener('keyup', function() {
+  //   filterSpecialists();
+  // });
+  //
+  // function filterSpecialists() {
+  //   const titleFilter = document.getElementById('searchTitle').value.toUpperCase();
+  //   const locationFilter = document.getElementById('searchLocation').value.toUpperCase();
+  //   const experienceFilter = document.getElementById('searchExperience').value.toUpperCase();
+  //   const specialists = document.getElementById('specialists').getElementsByClassName('specialist');
+  //
+  //   for (let i = 0; i < specialists.length; i++) {
+  //     let title = specialists[i].getAttribute('data-title').toUpperCase();
+  //     let location = specialists[i].getAttribute('data-location').toUpperCase();
+  //     let experience = specialists[i].getAttribute('data-experience').toUpperCase();
+  //     if (title.indexOf(titleFilter) > -1 && location.indexOf(locationFilter) > -1 && experience.indexOf(experienceFilter) > -1) {
+  //       specialists[i].style.display = "";
+  //     } else {
+  //       specialists[i].style.display = "none";
+  //     }
+  //   }
+  // }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+html, body {
+    background-color: #EEF8FE;;
+}
+.card {
+    margin-bottom: 20px;
+}
+.card-img-top {
+    height: 350px;
+    object-fit: cover;
+}
+.extra-info {
+    display: none;
+}
+.extra-info.show {
+    display: block;
+}
