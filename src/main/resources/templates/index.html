@@ -81,26 +81,8 @@
 </head>
 <body>
 <div class="container-fluid p-0">
-    <header class="bg-primary text-white text-center py-4">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" th:href="@{/mt_care/relaxaria_welcome}">R E L A X A R I A</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/requestherapy}">Therapy sessions</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/blogpost}" > Mental health</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/professionals}">Professionals</a></li>
-                    <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/about}">About</a></li>
-                </ul>
-            </div>
-            <div class="auth-buttons">
-                <a th:href="@{/mt_care/signup}" class="btn btn-outline-light mr-2 btn-signin">Sign in</a>
-                <a th:href="@{/mt_care/registr}" class="btn btn-light btn-register">Register</a>
-            </div>
-        </nav>
-    </header>
+
+    <div th:replace="fragments/header :: header"></div>
 
     <main>
         <section class="hero">
@@ -108,7 +90,7 @@
                 <h1>Empowering your well-being through Relaxia</h1>
                 <p class="subtitle">Access immersive therapy sessions</p>
                 <p>At Relaxia, we offer a range of virtual reality-based therapy sessions designed to improve your mental health and well-being.</p>
-                <a href="#schedule-session" class="btn btn-orange mt-3">Schedule your Session</a>
+                <a th:href="@{/mt_care/requestherapy}" class="btn btn-orange mt-3">Schedule your Session</a>
             </div>
         </section>
 
@@ -125,7 +107,6 @@
                             <p>-Enhanced engagement: Interactive and engaging sessions that make therapy more effective and enjoyable.</p>
                             <p>-Stress reduction: Virtual environments that promote relaxation and reduce anxiety.</p>
                         </div>
-                        <a href="#service1" class="btn btn-primary">Learn More</a>
                     </div>
                     <div class="col-lg-4 service">
                         <img src="/imgs/mental_head_care.png" alt="Guided VR meditation and mindfulness" class="img-fluid" service-img>
@@ -136,7 +117,7 @@
                             <p>-Accessible Anytime, Anywhere: Engage in mindfulness practices at your convenience, whether at home or on the go.</p>
                             <p>-Improved Mental Well-being: Regular use can lead to significant improvements in overall mental health.</p>
                         </div>
-                        <a href="#service2" class="btn btn-primary">Learn More</a>
+                        <a th:href="@{/mt_care/about}" class="btn btn-primary">Learn More</a>
                     </div>
                     <div class="col-lg-4 service">
                         <img src="/imgs/mental_panic.jpg" alt="VR Cognitive Behavioral therapy (CBT)" class="img-fluid" service-img>
@@ -147,7 +128,6 @@
                             <p>-Increased Effectiveness: The interactive nature of VR enhances the impact of traditional CBT techniques.</p>
                             <p>-Progress Tracking: Monitor your improvement with integrated progress tracking tools, ensuring you stay on the path to better mental health.</p>
                         </div>
-                        <a href="#service3" class="btn btn-primary">Learn More</a>
                     </div>
 
                 </div>
@@ -162,19 +142,19 @@
                         <img src="/imgs/mental_problems.png" alt="Blog 1" class="img-fluid blog-img">
                         <h3>Overcoming Stress</h3>
                         <p>Effective techniques for reducing stress and improving resilience.</p>
-                        <a href="#blog1" class="btn btn-primary">Read More</a>
+                        <a th:href="@{/mt_care/blogpost}" class="btn btn-primary">Read More</a>
                     </div>
                     <div class="col-md-4">
                         <img src="/imgs/fear.png" alt="Blog 2" class="img-fluid blog-img">
                         <h3>Understanding Anxiety</h3>
                         <p>An overview of anxiety disorders, their symptoms, and treatment options.</p>
-                        <a href="#blog2" class="btn btn-primary">Read More</a>
+                        <a th:href="@{/mt_care/blogpost}" class="btn btn-primary">Read More</a>
                     </div>
                     <div class="col-md-4">
                         <img src="/imgs/head_curlicues.jpg" alt="Blog 3" class="img-fluid blog-img">
                         <h3>Benefits of Mindfulness</h3>
                         <p>How mindfulness practices can enhance mental well-being and reduce stress.</p>
-                        <a href="#blog3" class="btn btn-primary">Read More</a>
+                        <a th:href="@{/mt_care/blogpost}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
@@ -226,37 +206,7 @@
         </section>
     </main>
 
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-link-cnt">Home</a></li>
-                        <li><a href="#" class="text-link-cnt">About us</a></li>
-                        <li><a th:href="@{/mt_cares/blogpost}" class="text-link-cnt">Blog posts</a></li>
-                        <li><a href="#" class="text-link-cnt">Professionals</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4" style="padding-left: 10px; padding-right: 10px">
-                    <h4>Contact us</h4>
-                    <p>Email: sp_relaxaria@gmail.com</p>
-                    <p>Phone: +8 (701)787-31-71</p>
-                    <p>Address: 34/1 Manas Street</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Follow us</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-link-cnt"><i class="fab fa-instagram"></i> Instagram </a> </li>
-                        <li><a href="#" class="text-link-cnt"><i class="fab fa-facebook-square"></i> Facebook</a> </li>
-                        <li><a href="#" class="text-link-cnt"><i class="fa fa-twitter"></i> X-twitter </a> </li>
-                    </ul>
-                </div>
-            </div>
-            <p class="mt-4">Need additional help? Visit <a href="/help" class="text-primary">About page</a>.</p>
-            <p class="rights">&copy; 2024 Relaxaria. All rights reserved.</p>
-        </div>
-    </footer>
+    <div th:replace="fragments/footer :: footer"></div>
 
 <!--        <section id="contact" class="text-center bg-light py-5">-->
 <!--            <div class="container">-->

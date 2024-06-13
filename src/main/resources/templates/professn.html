@@ -11,28 +11,8 @@
 </head>
 <body>
 <div class="container-fluid p-0">
-  <!-- Header Section -->
-  <header class="bg-primary text-white text-center py-4">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" th:href="@{/mt_care/relaxaria_welcome}">R E L A X A R I A</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/relaxaria_welcome}">Home</a></li>
-          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/requestherapy}">Therapy sessions</a></li>
-          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/blogpost}">Mental Health</a></li>
-          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/professionals}">Professionals</a></li>
-          <li class="nav-item"><a class="nav-link" th:href="@{/mt_care/about}">About</a></li>
-        </ul>
-      </div>
-      <div class="auth-buttons">
-        <a th:href="@{/mt_care/signup}" class="btn btn-outline-light mr-2 btn-signin">Sign in</a>
-        <a th:href="@{/mt_care/registr}" class="btn btn-light btn-register">Register</a>
-      </div>
-    </nav>
-  </header>
+
+  <div th:replace="fragments/header :: header"></div>
 
   <!-- Main Content -->
   <main class="container py-5">
@@ -127,38 +107,7 @@
     </div>
   </main>
 
-  <!-- Footer Section -->
-  <footer class="bg-dark text-white text-center py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h4>Contact us</h4>
-          <p>Email: support_relaxaria@gmail.com</p>
-          <p>Phone: +8 (701) 787-31-71</p>
-          <p>Address: 34/1 Manas Street</p>
-        </div>
-        <div class="col-md-4" style="padding-left: 10px; padding-right: 10px">
-          <h4>Follow us</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-link-cnt"><i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="#" class="text-link-cnt"><i class="fab fa-facebook-square"></i> Facebook</a></li>
-            <li><a href="#" class="text-link-cnt"><i class="fa fa-twitter"></i> X</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h4>Quick Links</h4>
-          <ul class="list-unstyled">
-            <li><a href="index.html" class="text-link-cnt">Home</a></li>
-            <li><a href="#" class="text-link-cnt">About us</a></li>
-            <li><a href="#" class="text-link-cnt">Blog posts</a></li>
-            <li><a href="#" class="text-link-cnt">Professional</a></li>
-          </ul>
-        </div>
-      </div>
-      <p class="mt-4">Need help? Visit our <a href="/help" class="text-primary">Help Center</a>.</p>
-      <p>&copy; 2024 Relaxaria. All Rights Reserved.</p>
-    </div>
-  </footer>
+  <div th:replace="fragments/footer :: footer"></div>
 </div>
 
 <script>
